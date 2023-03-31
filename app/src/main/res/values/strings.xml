@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HoroscopeApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Compatibilidad</string>
+    <string name="list_fragment">listado</string>
+    <string name="information_fragment">information</string>
+
 </resources>
