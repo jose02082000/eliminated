@@ -5,9 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.horoscopeapp.R
+import com.example.horoscopeapp.presentation.viewmodel.CompatibilityViewModel
+import com.example.horoscopeapp.presentation.viewmodel.InformationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class InformationFragment : Fragment() {
+
+    private val viewModel by viewModels<InformationViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
