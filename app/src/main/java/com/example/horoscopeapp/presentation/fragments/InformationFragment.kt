@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.horoscopeapp.R
-import com.example.horoscopeapp.presentation.viewmodel.CompatibilityViewModel
 import com.example.horoscopeapp.presentation.viewmodel.InformationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
