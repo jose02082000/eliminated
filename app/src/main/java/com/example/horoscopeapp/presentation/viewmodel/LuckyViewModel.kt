@@ -5,4 +5,4 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CompatibilityViewModel @Inject constructor() : ViewModel()
+class LuckyViewModel @Inject constructor() : ViewModel()
