@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/cafe"
     android:layout_height="match_parent"
+    android:background="@color/cafe"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".presentation.fragments.ListFragment">
 
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/list_fragment" />
+    <Button
+        android:id="@+id/btnCapricornio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="capricornio" />
 
-</FrameLayout>
+     <Button
+         android:id="@+id/btnLeo"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Leo" />
+
+     <Button
+         android:id="@+id/btnAries"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Aries" />
+
+</LinearLayout>
