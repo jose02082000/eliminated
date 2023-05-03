@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.horoscopeapp.databinding.FragmentListBinding
+import com.example.horoscopeapp.presentation.detail.DetailActivity
 import com.example.horoscopeapp.presentation.viewmodel.ListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,17 +22,22 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnAries.setOnClickListener {
-            // abrir el detalle
+            openDetail()
         }
 
         binding.btnCapricornio.setOnClickListener {
-            // abrir el detalle
+            openDetail()
         }
 
         binding.btnLeo.setOnClickListener {
-            // abrir detalle
+            openDetail()
         }
     }
+
+    private fun openDetail() {
+        startActivity(DetailActivity.create(requireContext()))
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,6 +46,4 @@ class ListFragment : Fragment() {
         _binding = FragmentListBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-
 }
