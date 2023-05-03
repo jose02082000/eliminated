@@ -1,14 +1,20 @@
 package com.example.horoscopeapp.data.network.model
 
+import com.example.horoscopeapp.domain.model.HoroscopeModel
 import com.google.gson.annotations.SerializedName
 
 data class HoroscopeResponse(
-    @SerializedName("current_date") var currentDate: String? = null,
-    @SerializedName("compatibility") var compatibility: String? = null,
-    @SerializedName("lucky_time") var luckyTime: String? = null,
-    @SerializedName("lucky_number") var luckyNumber: String? = null,
-    @SerializedName("color") var color: String? = null,
-    @SerializedName("date_range") var dateRange: String? = null,
-    @SerializedName("mood") var mood: String? = null,
-    @SerializedName("description") var description: String? = null,
+    @SerializedName("date") var date: String? = null,
+    @SerializedName("horoscope") var horoscope: String? = null,
+    @SerializedName("icon") var icon: String? = null,
+    @SerializedName("id") var id: Int? = null,
+    @SerializedName("sign") var sign: String? = null,
 )
+
+fun HoroscopeResponse.toDomain(): HoroscopeModel {
+    return HoroscopeModel(
+        horoscope = this.horoscope,
+        icon = this.icon,
+        sign = this.sign,
+    )
+}

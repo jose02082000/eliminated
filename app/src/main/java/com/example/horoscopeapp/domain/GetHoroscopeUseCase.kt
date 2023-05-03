@@ -1,18 +1,13 @@
 package com.example.horoscopeapp.domain
 
-import com.example.horoscopeapp.data.network.HoroscopeApi
-import com.example.horoscopeapp.data.network.model.HoroscopeResponse
+import com.example.horoscopeapp.core.network.ResultType
+import com.example.horoscopeapp.data.network.HoroscopeRepository
+import com.example.horoscopeapp.domain.dto.HoroscopeDTO
+import com.example.horoscopeapp.domain.model.HoroscopeModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
 
-class GetHoroscopeUseCase @Inject constructor(private val api: HoroscopeApi) {
-
-    suspend operator fun invoke(): Flow<HoroscopeResponse?> {
-        val response = api.getHoroscope("leo", "today")
-        if (response.isSuccessful) {
-            return flowOf(response.body())
-        }
-        return flowOf(null)
-    }
+class GetHoroscopeUseCase @Inject constructor(private val horoscopeRepository: HoroscopeRepository) {
+    operator fun invoke(horoscopeDTO: HoroscopeDTO): Flow<ResultType<HoroscopeModel>> =
+        horoscopeRepository.getHoroscope(horoscopeDTO)
 }

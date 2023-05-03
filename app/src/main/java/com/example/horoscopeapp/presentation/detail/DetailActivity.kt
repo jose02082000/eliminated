@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -49,7 +48,8 @@ class DetailActivity : AppCompatActivity() {
                         }
                         is DetailUiState.Success -> {
                             binding.loading.isVisible = false
-                            Toast.makeText(this@DetailActivity, "Ha Funcionado", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@DetailActivity, it.horoscopeModel.horoscope, Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
                 }
